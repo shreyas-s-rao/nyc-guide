@@ -26,6 +26,12 @@
     -webkit-background-clip:text; background-clip:text; color:transparent; }
   .reset { font-size:11px; color:var(--muted); background:#f0eff5; border:none;
     padding:5px 10px; border-radius:999px; font-weight:600; cursor:pointer; }
+  .hdr-actions { display:flex; gap:6px; align-items:center; }
+  .locbtn { font-family:inherit; font-size:11px; font-weight:700; border:none; cursor:pointer;
+    padding:5px 10px; border-radius:999px; background:#f0eff5; color:var(--muted); white-space:nowrap; }
+  .locbtn.on { background:#e7f8ee; color:#1c8a4e; }
+  .locbtn.locating { background:#fff2e0; color:#a25b00; }
+  .locbtn.blocked { background:#ffe9e9; color:#c0392b; }
   .dayswitch { display:flex; gap:6px; margin-top:8px; }
   .dayswitch button { flex:1; font-family:inherit; font-weight:700; font-size:13px;
     padding:8px 0; border:1.5px solid var(--line); background:#fff; color:var(--muted);
@@ -44,9 +50,19 @@
     background:var(--brand); color:#fff; padding:7px 12px; border-radius:999px; cursor:pointer; }
   #next .dist { color:var(--muted); font-size:12px; }
 
-  #map { flex:1 1 40%; min-height:180px; z-index:1; }
+  #mapwrap { flex:none; overflow:hidden; transition:height .28s ease; z-index:1; }
+  #mapwrap.expanded { height:42vh; }
+  #mapwrap.collapsed { height:0; }
+  #map { width:100%; height:100%; min-height:0; }
 
-  #timeline { flex:1 1 60%; overflow-y:auto; background:#f6f5fb;
+  #mapHandle { flex:none; width:100%; border:none; background:#fff; cursor:pointer;
+    display:flex; flex-direction:column; align-items:center; gap:3px; padding:6px 0 7px;
+    font-family:inherit; font-weight:700; font-size:12px; color:var(--muted);
+    box-shadow:0 -1px 6px rgba(60,40,120,.06); z-index:5; }
+  #mapHandle .grip { width:38px; height:4px; border-radius:999px; background:#d7d4e2; }
+  #mapHandle .handle-label { display:flex; align-items:center; gap:5px; }
+
+  #timeline { flex:1 1 auto; overflow-y:auto; background:#f6f5fb;
     -webkit-overflow-scrolling:touch; padding:6px 12px 40px; }
   .stop { background:#fff; border-radius:14px; padding:11px 12px; margin:9px 0;
     box-shadow:0 2px 8px rgba(60,40,120,.06); border:1.5px solid transparent; transition:.15s; }
@@ -110,7 +126,10 @@
 <header>
   <div class="titlerow">
     <h1>🗽 Manasa's NYC Guide</h1>
-    <button class="reset" id="resetBtn">Reset ticks</button>
+    <div class="hdr-actions">
+      <button class="locbtn" id="locBtn" title="Enable location">📍 <span id="locState">Location off</span></button>
+      <button class="reset" id="resetBtn">Reset</button>
+    </div>
   </div>
   <div class="dayswitch" id="dayswitch"></div>
   <div class="daymeta"><span class="sub" id="daysub"></span>
@@ -120,7 +139,13 @@
   <button id="nextBtn">📍 Next stop</button>
   <span id="nextText" class="dist">Tap to find your nearest un-done stop</span>
 </div></div>
-<div id="map"></div>
+<div id="mapwrap" class="expanded">
+  <div id="map"></div>
+</div>
+<button id="mapHandle" class="expanded" aria-label="Toggle map">
+  <span class="grip"></span>
+  <span class="handle-label">🗺️ Hide map</span>
+</button>
 <div id="timeline"></div>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"

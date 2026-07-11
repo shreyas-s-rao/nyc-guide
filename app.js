@@ -10,6 +10,9 @@ const state = {
   markers: {},                // stopId -> leaflet marker (current day)
   layer: null,                // current day's layer group
   map: null,
+  pos: null,                  // last known {lat,lng} from GPS
+  locWatch: null,             // geolocation watch id
+  userMarker: null,           // marker for user's location
 };
 
 function loadProgress() {
@@ -34,7 +37,17 @@ fetch('itinerary.json').then(r => r.json()).then(data => {
   buildDaySwitch();
   initMap();
   renderDay(0);
+  maybeAutoLocate();
 });
+
+// On load, if location was already granted before, resume it silently (no prompt).
+function maybeAutoLocate() {
+  if (!navigator.permissions || !navigator.permissions.query) return;
+  navigator.permissions.query({ name: 'geolocation' }).then(p => {
+    if (p.state === 'granted') requestLocation(false);
+    else if (p.state === 'denied') setLocBtn('blocked', 'Blocked — tap 🔒');
+  }).catch(() => {});
+}
 
 function initMap() {
   state.map = L.map('map', { zoomControl: true, tap: true });
@@ -58,6 +71,78 @@ function buildDaySwitch() {
     }
   };
   document.getElementById('nextBtn').onclick = suggestNext;
+  document.getElementById('locBtn').onclick = () => requestLocation(true);
+  document.getElementById('mapHandle').onclick = toggleMap;
+}
+
+/* --- map collapse/expand --- */
+function setMap(expanded) {
+  const wrap = document.getElementById('mapwrap');
+  const handle = document.getElementById('mapHandle');
+  wrap.classList.toggle('expanded', expanded);
+  wrap.classList.toggle('collapsed', !expanded);
+  handle.querySelector('.handle-label').textContent = expanded ? '🗺️ Hide map' : '🗺️ Show map';
+  // Leaflet needs a size recalc after the container changes height
+  setTimeout(() => { if (state.map) state.map.invalidateSize(); }, 300);
+}
+function toggleMap() {
+  const collapsed = document.getElementById('mapwrap').classList.contains('collapsed');
+  setMap(collapsed);   // if currently collapsed, expand; else collapse
+}
+
+/* --- location permission + tracking --- */
+function setLocBtn(cls, label) {
+  const b = document.getElementById('locBtn');
+  b.className = 'locbtn ' + cls;
+  document.getElementById('locState').textContent = label;
+}
+
+function requestLocation(userInitiated) {
+  if (!navigator.geolocation) { setLocBtn('blocked', 'No GPS'); return; }
+  setLocBtn('locating', 'Locating…');
+
+  // If the Permissions API says it's blocked, guide the user.
+  if (navigator.permissions && navigator.permissions.query) {
+    navigator.permissions.query({ name: 'geolocation' }).then(p => {
+      if (p.state === 'denied') {
+        setLocBtn('blocked', 'Blocked — tap 🔒');
+        if (userInitiated) alert(
+          'Location is blocked for this site.\n\nTo enable on Android Chrome:\n' +
+          '1. Tap the 🔒 / ⓘ icon left of the address bar\n' +
+          '2. Permissions → Location → Allow\n3. Reload the page.');
+      }
+    });
+  }
+
+  // Start a watch so we keep an updated position for "next stop".
+  if (state.locWatch != null) navigator.geolocation.clearWatch(state.locWatch);
+  state.locWatch = navigator.geolocation.watchPosition(
+    pos => {
+      state.pos = { lat: pos.coords.latitude, lng: pos.coords.longitude };
+      setLocBtn('on', 'Location on');
+      showUserMarker();
+    },
+    err => {
+      if (err.code === err.PERMISSION_DENIED) {
+        setLocBtn('blocked', 'Blocked — tap 🔒');
+        if (userInitiated) alert(
+          'Location permission was denied.\n\nEnable it via the 🔒 icon in the address bar → ' +
+          'Permissions → Location → Allow, then reload.');
+      } else {
+        setLocBtn('', 'Location off');
+      }
+    },
+    { enableHighAccuracy: true, maximumAge: 10000, timeout: 15000 }
+  );
+}
+
+function showUserMarker() {
+  if (!state.pos || !state.map) return;
+  const ll = [state.pos.lat, state.pos.lng];
+  if (state.userMarker) { state.userMarker.setLatLng(ll); return; }
+  state.userMarker = L.circleMarker(ll, {
+    radius: 8, color: '#fff', weight: 3, fillColor: '#1a73e8', fillOpacity: 1
+  }).addTo(state.map).bindPopup('You are here');
 }
 
 /* --- day rendering --- */
@@ -99,7 +184,7 @@ function pinIcon(kind, status, num, sel) {
   });
 }
 
-function drawMarkers(day) {
+function drawMarkers(day, fit = true) {
   if (state.layer) state.map.removeLayer(state.layer);
   state.markers = {};
   const group = L.layerGroup();
@@ -119,7 +204,7 @@ function drawMarkers(day) {
     L.polyline(line, { color: '#6d3bf5', weight: 3, opacity: .5, dashArray: '1,6', lineCap: 'round' }).addTo(group);
   }
   state.layer = group.addTo(state.map);
-  if (line.length) state.map.fitBounds(L.latLngBounds(line).pad(0.25));
+  if (fit && line.length) state.map.fitBounds(L.latLngBounds(line).pad(0.25));
 }
 
 function addMarker(group, s, num) {
@@ -245,9 +330,9 @@ window.toggle = function (id, status) {
 
 function selectStop(id, fromMap) {
   state.selected = id;
-  // refresh marker icons for selection outline
+  // refresh marker icons for selection outline (don't re-fit bounds)
   const day = state.data.days[state.dayIdx];
-  drawMarkers(day);
+  drawMarkers(day, false);
   const m = state.markers[id];
   if (m) {
     if (!fromMap) { state.map.panTo(m.getLatLng()); m.openPopup(); }
@@ -271,28 +356,32 @@ function suggestNext() {
   const txt = document.getElementById('nextText');
   if (!candidates.length) { txt.textContent = 'All done for today! 🎉'; return; }
 
-  if (!navigator.geolocation) { fallbackNext(candidates, txt, 'No GPS'); return; }
-  txt.textContent = 'Locating…';
-  navigator.geolocation.getCurrentPosition(pos => {
-    const here = { lat: pos.coords.latitude, lng: pos.coords.longitude };
-    let best = null, bestD = Infinity;
-    candidates.forEach(s => {
-      const d = haversine(here, { lat: s.lat, lng: s.lng });
-      if (d < bestD) { bestD = d; best = s; }
-    });
-    const dirs = `https://www.google.com/maps/dir/?api=1&destination=${best.lat},${best.lng}` +
-      (best.place_id ? `&destination_place_id=${best.place_id}` : '');
-    txt.innerHTML = `Next: <b>${best.name}</b> · ${bestD.toFixed(bestD < 1 ? 2 : 1)} km ` +
-      `<a class="chip map" href="${dirs}" target="_blank">directions</a>`;
-    selectStop(best.id, false);
-  }, err => {
-    fallbackNext(candidates, txt, 'Location off');
-  }, { enableHighAccuracy: true, timeout: 8000 });
+  // Use the shared watched position. If we don't have one yet, request it and retry.
+  if (!state.pos) {
+    txt.textContent = 'Getting your location…';
+    requestLocation(true);
+    setTimeout(() => { if (state.pos) suggestNext(); else fallbackNext(candidates, txt, 'Location off'); }, 3500);
+    return;
+  }
+
+  const here = state.pos;
+  let best = null, bestD = Infinity;
+  candidates.forEach(s => {
+    const d = haversine(here, { lat: s.lat, lng: s.lng });
+    if (d < bestD) { bestD = d; best = s; }
+  });
+  const dirs = `https://www.google.com/maps/dir/?api=1&destination=${best.lat},${best.lng}` +
+    (best.place_id ? `&destination_place_id=${best.place_id}` : '');
+  txt.innerHTML = `Next: <b>${best.name}</b> · ${bestD.toFixed(bestD < 1 ? 2 : 1)} km ` +
+    `<a class="chip map" href="${dirs}" target="_blank">directions</a>`;
+  setMap(true);            // expand map so she can see where she's headed
+  selectStop(best.id, false);
 }
 
 function fallbackNext(candidates, txt, reason) {
   // next un-done in planned order (main stops first by their order in the day)
   const best = candidates[0];
   txt.innerHTML = `${reason}. Next in plan: <b>${best.name}</b>`;
+  setMap(true);
   selectStop(best.id, false);
 }
