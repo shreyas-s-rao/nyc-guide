@@ -101,20 +101,36 @@ function requestLocation(userInitiated) {
   if (!navigator.geolocation) { setLocBtn('blocked', 'No GPS'); return; }
   setLocBtn('locating', 'Locating…');
 
-  // If the Permissions API says it's blocked, guide the user.
-  if (navigator.permissions && navigator.permissions.query) {
-    navigator.permissions.query({ name: 'geolocation' }).then(p => {
-      if (p.state === 'denied') {
+  // Call getCurrentPosition directly on the user gesture — this is what actually
+  // triggers the browser's native permission prompt. Do NOT gate it behind
+  // permissions.query (which can report a stale 'denied' and suppress the ask).
+  navigator.geolocation.getCurrentPosition(
+    pos => {
+      state.pos = { lat: pos.coords.latitude, lng: pos.coords.longitude };
+      setLocBtn('on', 'Location on');
+      showUserMarker();
+      startWatch();          // keep it fresh for "next stop"
+    },
+    err => {
+      if (err.code === err.PERMISSION_DENIED) {
         setLocBtn('blocked', 'Blocked — tap 🔒');
         if (userInitiated) alert(
-          'Location is blocked for this site.\n\nTo enable on Android Chrome:\n' +
+          'Location is blocked for this site.\n\nOn Android Chrome:\n' +
           '1. Tap the 🔒 / ⓘ icon left of the address bar\n' +
-          '2. Permissions → Location → Allow\n3. Reload the page.');
+          '2. Permissions → Location → Allow\n' +
+          '3. Reload the page and tap 📍 again.\n\n' +
+          '(If you see no Location option there, the site hasn\'t been granted it yet — ' +
+          'make sure Location is also ON in Android Settings for Chrome.)');
+      } else {
+        setLocBtn('', 'Location off');
+        if (userInitiated) alert('Could not get your location (timeout or signal). Try again outdoors.');
       }
-    });
-  }
+    },
+    { enableHighAccuracy: true, timeout: 15000, maximumAge: 0 }
+  );
+}
 
-  // Start a watch so we keep an updated position for "next stop".
+function startWatch() {
   if (state.locWatch != null) navigator.geolocation.clearWatch(state.locWatch);
   state.locWatch = navigator.geolocation.watchPosition(
     pos => {
@@ -122,17 +138,8 @@ function requestLocation(userInitiated) {
       setLocBtn('on', 'Location on');
       showUserMarker();
     },
-    err => {
-      if (err.code === err.PERMISSION_DENIED) {
-        setLocBtn('blocked', 'Blocked — tap 🔒');
-        if (userInitiated) alert(
-          'Location permission was denied.\n\nEnable it via the 🔒 icon in the address bar → ' +
-          'Permissions → Location → Allow, then reload.');
-      } else {
-        setLocBtn('', 'Location off');
-      }
-    },
-    { enableHighAccuracy: true, maximumAge: 10000, timeout: 15000 }
+    () => { /* keep last known position on transient watch errors */ },
+    { enableHighAccuracy: true, maximumAge: 10000, timeout: 20000 }
   );
 }
 
