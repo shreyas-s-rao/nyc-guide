@@ -1,0 +1,813 @@
+{
+  "title": "Manasa's NYC Guide",
+  "dates": "July 22-24, 2026",
+  "days": [
+    {
+      "id": "wed",
+      "label": "Wednesday Jul 22",
+      "sub": "Midtown classics + Central Park. All on foot, relaxed.",
+      "end": "17:15",
+      "total_km": 8.5,
+      "stops": [
+        {
+          "id": "wed-0",
+          "name": "NY Penn Station",
+          "kind": "start",
+          "lat": 40.75005,
+          "lng": -73.99235999999999,
+          "place_id": "ChIJy62yFa5ZwokRun79NAZCVXk",
+          "mode": "start",
+          "arrive": "09:00",
+          "depart": "",
+          "leg": "",
+          "dwell": 0,
+          "note": "Arrive ~9:00am on NJ Transit NEC from Metuchen",
+          "reel": null,
+          "gmaps": "https://www.google.com/maps/search/?api=1&query=NY%20Penn%20Station&query_place_id=ChIJy62yFa5ZwokRun79NAZCVXk",
+          "optionals": []
+        },
+        {
+          "id": "wed-1",
+          "name": "Macy's Herald Square",
+          "kind": "main",
+          "lat": 40.7504817,
+          "lng": -73.9882938,
+          "place_id": "ChIJ3xjWra5ZwokRrwJ0KZ4yKNs",
+          "mode": "walking",
+          "arrive": "09:07",
+          "depart": "09:27",
+          "leg": "walking 8 min, 0.53 km",
+          "dwell": 20,
+          "note": "Exterior / quick browse",
+          "reel": null,
+          "gmaps": "https://www.google.com/maps/search/?api=1&query=Macy%27s%20Herald%20Square&query_place_id=ChIJ3xjWra5ZwokRrwJ0KZ4yKNs",
+          "optionals": []
+        },
+        {
+          "id": "wed-2",
+          "name": "Empire State Building",
+          "kind": "main",
+          "lat": 40.7484405,
+          "lng": -73.98566439999999,
+          "place_id": "ChIJaXQRs6lZwokRY6EFpJnhNNE",
+          "mode": "walking",
+          "arrive": "09:34",
+          "depart": "09:54",
+          "leg": "walking 7 min, 0.47 km",
+          "dwell": 20,
+          "note": "Photo from ground level (not going up)",
+          "reel": null,
+          "gmaps": "https://www.google.com/maps/search/?api=1&query=Empire%20State%20Building&query_place_id=ChIJaXQRs6lZwokRY6EFpJnhNNE",
+          "optionals": [
+            {
+              "id": "wed-opt-1",
+              "name": "Ichiran",
+              "kind": "optional",
+              "lat": 40.76005749999999,
+              "lng": -73.9833246,
+              "place_id": "ChIJY6CJiVlZwokRUuEZJOmVFY8",
+              "note": "1 block south on W 31st. Order-at-booth veggie ramen if you want an early bite.",
+              "reel": "https://www.instagram.com/reel/DXnclYNDSRY/",
+              "gmaps": "https://www.google.com/maps/search/?api=1&query=Ichiran&query_place_id=ChIJY6CJiVlZwokRUuEZJOmVFY8"
+            }
+          ]
+        },
+        {
+          "id": "wed-3",
+          "name": "New York Public Library",
+          "kind": "main",
+          "lat": 40.75318230000001,
+          "lng": -73.9822534,
+          "place_id": "ChIJqaiomQBZwokRTHOaUG7fUTs",
+          "mode": "walking",
+          "arrive": "10:05",
+          "depart": "10:30",
+          "leg": "walking 12 min, 0.77 km",
+          "dwell": 25,
+          "note": "Beautiful interiors. Don't sit and read though :)",
+          "reel": null,
+          "gmaps": "https://www.google.com/maps/search/?api=1&query=New%20York%20Public%20Library&query_place_id=ChIJqaiomQBZwokRTHOaUG7fUTs",
+          "optionals": [
+            {
+              "id": "wed-opt-2",
+              "name": "Läderach",
+              "kind": "optional",
+              "lat": 40.7127753,
+              "lng": -74.0059728,
+              "place_id": "ChIJOwg_06VPwokRYv534QaPC8g",
+              "note": "On 5th Ave just north, between the library and Grand Central. Swiss chocolate, grab a FrischSchoggi.",
+              "reel": null,
+              "gmaps": "https://www.google.com/maps/search/?api=1&query=L%C3%A4derach&query_place_id=ChIJOwg_06VPwokRYv534QaPC8g"
+            }
+          ]
+        },
+        {
+          "id": "wed-4",
+          "name": "Bryant Park",
+          "kind": "main",
+          "lat": 40.7535367,
+          "lng": -73.9829529,
+          "place_id": "ChIJvbGg56pZwokRp_E3JbivnLQ",
+          "mode": "walking",
+          "arrive": "10:34",
+          "depart": "10:54",
+          "leg": "walking 4 min, 0.27 km",
+          "dwell": 20,
+          "note": "Pass-through / coffee + light snack (real lunch at Din Tai Fung later)",
+          "reel": null,
+          "gmaps": "https://www.google.com/maps/search/?api=1&query=Bryant%20Park&query_place_id=ChIJvbGg56pZwokRp_E3JbivnLQ",
+          "optionals": []
+        },
+        {
+          "id": "wed-5",
+          "name": "Grand Central Terminal",
+          "kind": "main",
+          "lat": 40.7533582,
+          "lng": -73.9768041,
+          "place_id": "ChIJhRwB-yFawokRi0AhGH87UTc",
+          "mode": "walking",
+          "arrive": "11:07",
+          "depart": "11:37",
+          "leg": "walking 13 min, 0.91 km",
+          "dwell": 30,
+          "note": "Main concourse, celestial ceiling",
+          "reel": null,
+          "gmaps": "https://www.google.com/maps/search/?api=1&query=Grand%20Central%20Terminal&query_place_id=ChIJhRwB-yFawokRi0AhGH87UTc",
+          "optionals": []
+        },
+        {
+          "id": "wed-6",
+          "name": "Chrysler Building",
+          "kind": "main",
+          "lat": 40.7516208,
+          "lng": -73.97550199999999,
+          "place_id": "ChIJeWPFRwJZwokRGD60OOo74RU",
+          "mode": "walking",
+          "arrive": "11:42",
+          "depart": "11:57",
+          "leg": "walking 5 min, 0.37 km",
+          "dwell": 15,
+          "note": "Art-deco lobby + exterior",
+          "reel": null,
+          "gmaps": "https://www.google.com/maps/search/?api=1&query=Chrysler%20Building&query_place_id=ChIJeWPFRwJZwokRGD60OOo74RU",
+          "optionals": []
+        },
+        {
+          "id": "wed-7",
+          "name": "St. Patrick's Cathedral",
+          "kind": "main",
+          "lat": 40.7586117,
+          "lng": -73.9761953,
+          "place_id": "ChIJUW4vEPxYwokRW6o24DU0YIg",
+          "mode": "walking",
+          "arrive": "12:12",
+          "depart": "12:37",
+          "leg": "walking 16 min, 1.08 km",
+          "dwell": 25,
+          "note": "Go inside for the interiors. Don't get converted though ;)",
+          "reel": null,
+          "gmaps": "https://www.google.com/maps/search/?api=1&query=St.%20Patrick%27s%20Cathedral&query_place_id=ChIJUW4vEPxYwokRW6o24DU0YIg",
+          "optionals": [
+            {
+              "id": "wed-opt-3",
+              "name": "Louis Vuitton Trunk",
+              "kind": "optional",
+              "lat": 40.7630953,
+              "lng": -73.973655,
+              "place_id": "ChIJofWhTABZwokR_Yr8Ta68CFg",
+              "note": "A few blocks up 5th Ave (57th St). Giant trunk installation, quick photo on the way to Rockefeller.",
+              "reel": null,
+              "gmaps": "https://www.google.com/maps/search/?api=1&query=Louis%20Vuitton%20Trunk&query_place_id=ChIJofWhTABZwokR_Yr8Ta68CFg"
+            }
+          ]
+        },
+        {
+          "id": "wed-8",
+          "name": "Rockefeller Center",
+          "kind": "main",
+          "lat": 40.7587402,
+          "lng": -73.9786736,
+          "place_id": "ChIJ9U1mz_5YwokRosza1aAk0jM",
+          "mode": "walking",
+          "arrive": "12:42",
+          "depart": "13:07",
+          "leg": "walking 4 min, 0.31 km",
+          "dwell": 25,
+          "note": "Plaza, ground level",
+          "reel": null,
+          "gmaps": "https://www.google.com/maps/search/?api=1&query=Rockefeller%20Center&query_place_id=ChIJ9U1mz_5YwokRosza1aAk0jM",
+          "optionals": []
+        },
+        {
+          "id": "wed-9",
+          "name": "Radio City Music Hall",
+          "kind": "main",
+          "lat": 40.75997599999999,
+          "lng": -73.9799772,
+          "place_id": "ChIJPS8b1vhYwokRldqq2YHmxJI",
+          "mode": "walking",
+          "arrive": "13:10",
+          "depart": "13:20",
+          "leg": "walking 3 min, 0.24 km",
+          "dwell": 10,
+          "note": "Exterior photo",
+          "reel": null,
+          "gmaps": "https://www.google.com/maps/search/?api=1&query=Radio%20City%20Music%20Hall&query_place_id=ChIJPS8b1vhYwokRldqq2YHmxJI",
+          "optionals": []
+        },
+        {
+          "id": "wed-10",
+          "name": "Din Tai Fung",
+          "kind": "main",
+          "lat": 40.7619804,
+          "lng": -73.98395970000001,
+          "place_id": "ChIJzRA7agBZwokRbSxOyEGFG5U",
+          "mode": "walking",
+          "arrive": "13:26",
+          "depart": "14:26",
+          "leg": "walking 6 min, 0.42 km",
+          "dwell": 60,
+          "note": "Lunch. Taiwanese, veg options. (1633 Broadway, near Times Square)",
+          "reel": "https://www.instagram.com/reel/DYH_kXSuVNz/",
+          "gmaps": "https://www.google.com/maps/search/?api=1&query=Din%20Tai%20Fung&query_place_id=ChIJzRA7agBZwokRbSxOyEGFG5U",
+          "optionals": [
+            {
+              "id": "wed-opt-4",
+              "name": "Pasta de Pasta",
+              "kind": "optional",
+              "lat": 40.7290539,
+              "lng": -73.9845732,
+              "place_id": "ChIJS_F8t5lZwokRewskQW2Tzk8",
+              "note": "One block west on 9th Ave. Pasta tossed in a cheese wheel, if DTF has a wait.",
+              "reel": "https://www.instagram.com/reel/DXfI8MZx3gF/",
+              "gmaps": "https://www.google.com/maps/search/?api=1&query=Pasta%20de%20Pasta&query_place_id=ChIJS_F8t5lZwokRewskQW2Tzk8"
+            }
+          ]
+        },
+        {
+          "id": "wed-11",
+          "name": "Times Square",
+          "kind": "main",
+          "lat": 40.7579747,
+          "lng": -73.9855426,
+          "place_id": "ChIJmQJIxlVYwokRLgeuocVOGVU",
+          "mode": "walking",
+          "arrive": "14:32",
+          "depart": "15:02",
+          "leg": "walking 6 min, 0.48 km",
+          "dwell": 30,
+          "note": "The lights",
+          "reel": null,
+          "gmaps": "https://www.google.com/maps/search/?api=1&query=Times%20Square&query_place_id=ChIJmQJIxlVYwokRLgeuocVOGVU",
+          "optionals": [
+            {
+              "id": "wed-opt-5",
+              "name": "LOS TACOS No.1",
+              "kind": "optional",
+              "lat": 40.7127753,
+              "lng": -74.0059728,
+              "place_id": "ChIJOwg_06VPwokRYv534QaPC8g",
+              "note": "Inside/near Times Square. Chain, one solid veg option, quick.",
+              "reel": "https://www.instagram.com/reel/DXc3V3KDWHX/",
+              "gmaps": "https://www.google.com/maps/search/?api=1&query=LOS%20TACOS%20No.1&query_place_id=ChIJOwg_06VPwokRYv534QaPC8g"
+            },
+            {
+              "id": "wed-opt-6",
+              "name": "Central Perk Coffee Company",
+              "kind": "optional",
+              "lat": 40.759255,
+              "lng": -73.984134,
+              "place_id": "ChIJ1dylOQBZwokRRwwWbYERhW4",
+              "note": "At 20 Times Square. The FRIENDS-themed cafe, right on the route.",
+              "reel": "https://www.instagram.com/reel/DT8HzPljTD4/",
+              "gmaps": "https://www.google.com/maps/search/?api=1&query=Central%20Perk%20Coffee%20Company&query_place_id=ChIJ1dylOQBZwokRRwwWbYERhW4"
+            }
+          ]
+        },
+        {
+          "id": "wed-12",
+          "name": "Angelina Bakery Times Square",
+          "kind": "main",
+          "lat": 40.7629544,
+          "lng": -73.98333099999999,
+          "place_id": "ChIJJcxqGxNZwokRgNPiig9YtQk",
+          "mode": "walking",
+          "arrive": "15:11",
+          "depart": "15:36",
+          "leg": "walking 8 min, 0.60 km",
+          "dwell": 25,
+          "note": "Nutella Bambolini",
+          "reel": "https://www.instagram.com/reel/DXc3V3KDWHX/",
+          "gmaps": "https://www.google.com/maps/search/?api=1&query=Angelina%20Bakery%20Times%20Square&query_place_id=ChIJJcxqGxNZwokRgNPiig9YtQk",
+          "optionals": []
+        },
+        {
+          "id": "wed-13",
+          "name": "Central Park - The Mall",
+          "kind": "main",
+          "lat": 40.77235220000001,
+          "lng": -73.9715901,
+          "place_id": "ChIJxcSlpvJYwokRLcMSp1tjBf4",
+          "mode": "walking",
+          "arrive": "15:59",
+          "depart": "16:29",
+          "leg": "walking 23 min, 1.63 km",
+          "dwell": 30,
+          "note": "Tree-lined promenade",
+          "reel": null,
+          "gmaps": "https://www.google.com/maps/search/?api=1&query=Central%20Park%20-%20The%20Mall&query_place_id=ChIJxcSlpvJYwokRLcMSp1tjBf4",
+          "optionals": []
+        },
+        {
+          "id": "wed-14",
+          "name": "Bethesda Terrace",
+          "kind": "main",
+          "lat": 40.7739528,
+          "lng": -73.97096570000001,
+          "place_id": "ChIJEYYWppJYwokRUTul6ztwlJ0",
+          "mode": "walking",
+          "arrive": "16:32",
+          "depart": "16:52",
+          "leg": "walking 3 min, 0.19 km",
+          "dwell": 20,
+          "note": "Fountain + arcade",
+          "reel": null,
+          "gmaps": "https://www.google.com/maps/search/?api=1&query=Bethesda%20Terrace&query_place_id=ChIJEYYWppJYwokRUTul6ztwlJ0",
+          "optionals": []
+        },
+        {
+          "id": "wed-15",
+          "name": "Bow Bridge",
+          "kind": "main",
+          "lat": 40.7757544,
+          "lng": -73.97177839999999,
+          "place_id": "ChIJiR6aeI1YwokRkCNO-e1lQfs",
+          "mode": "walking",
+          "arrive": "16:55",
+          "depart": "17:15",
+          "leg": "walking 3 min, 0.23 km",
+          "dwell": 20,
+          "note": "Iconic cast-iron bridge",
+          "reel": null,
+          "gmaps": "https://www.google.com/maps/search/?api=1&query=Bow%20Bridge&query_place_id=ChIJiR6aeI1YwokRkCNO-e1lQfs",
+          "optionals": []
+        }
+      ],
+      "costs": [
+        [
+          "NJ Transit round trip (Metuchen–Penn)",
+          "$26"
+        ],
+        [
+          "Food (lunch + bakery + snacks)",
+          "$35–50"
+        ],
+        [
+          "Attractions",
+          "Free (all ground-level / interiors)"
+        ],
+        [
+          "Day total",
+          "~$60–75"
+        ]
+      ]
+    },
+    {
+      "id": "thu",
+      "label": "Thursday Jul 23",
+      "sub": "Roosevelt Island + Hudson Yards + FRIENDS + West Village.",
+      "end": "15:54",
+      "total_km": 15.4,
+      "stops": [
+        {
+          "id": "thu-0",
+          "name": "NY Penn Station",
+          "kind": "start",
+          "lat": 40.75005,
+          "lng": -73.99235999999999,
+          "place_id": "ChIJy62yFa5ZwokRun79NAZCVXk",
+          "mode": "start",
+          "arrive": "09:00",
+          "depart": "",
+          "leg": "",
+          "dwell": 0,
+          "note": "Arrive ~9:00am. Subway (F) to Roosevelt Island (morning, OK)",
+          "reel": null,
+          "gmaps": "https://www.google.com/maps/search/?api=1&query=NY%20Penn%20Station&query_place_id=ChIJy62yFa5ZwokRun79NAZCVXk",
+          "optionals": []
+        },
+        {
+          "id": "thu-1",
+          "name": "Roosevelt Island",
+          "kind": "main",
+          "lat": 40.7621302,
+          "lng": -73.9499426,
+          "place_id": "ChIJv0ZfedxYwokRXwgjODthBLI",
+          "mode": "transit",
+          "arrive": "09:25",
+          "depart": "10:10",
+          "leg": "transit 26 min, 5.28 km",
+          "dwell": 45,
+          "note": "Subway there (morning, F train ~15 min). Skyline + East River views.",
+          "reel": null,
+          "gmaps": "https://www.google.com/maps/search/?api=1&query=Roosevelt%20Island&query_place_id=ChIJv0ZfedxYwokRXwgjODthBLI",
+          "optionals": []
+        },
+        {
+          "id": "thu-2",
+          "name": "Roosevelt Island Tramway (Manhattan)",
+          "kind": "main",
+          "lat": 40.7615945,
+          "lng": -73.964576,
+          "place_id": "ChIJ8VsOEeZYwokRkK7bJllfaYI",
+          "mode": "tram",
+          "arrive": "10:15",
+          "depart": "10:20",
+          "leg": "tram ~5 min (fixed)",
+          "dwell": 5,
+          "note": "Aerial tram BACK to Manhattan (iconic ride, ~5 min, lands at E 60th/2nd Ave)",
+          "reel": null,
+          "gmaps": "https://www.google.com/maps/search/?api=1&query=Roosevelt%20Island%20Tramway%20%28Manhattan%29&query_place_id=ChIJ8VsOEeZYwokRkK7bJllfaYI",
+          "optionals": []
+        },
+        {
+          "id": "thu-3",
+          "name": "Vessel (Hudson Yards)",
+          "kind": "main",
+          "lat": 40.7538073,
+          "lng": -74.0021537,
+          "place_id": "ChIJqygAFrRZwokRwF0VrBoXS0E",
+          "mode": "transit",
+          "arrive": "10:43",
+          "depart": "11:03",
+          "leg": "transit 23 min, 4.98 km",
+          "dwell": 20,
+          "note": "Crosstown to Hudson Yards (subway ~15 min, morning OK; or ~50 min walk if she prefers)",
+          "reel": null,
+          "gmaps": "https://www.google.com/maps/search/?api=1&query=Vessel%20%28Hudson%20Yards%29&query_place_id=ChIJqygAFrRZwokRwF0VrBoXS0E",
+          "optionals": []
+        },
+        {
+          "id": "thu-4",
+          "name": "Edge NYC",
+          "kind": "main",
+          "lat": 40.7533936,
+          "lng": -74.00105500000001,
+          "place_id": "ChIJ3aqq5Q1ZwokRb9hLO7Gyxgw",
+          "mode": "walking",
+          "arrive": "11:07",
+          "depart": "12:07",
+          "leg": "walking 3 min, 0.10 km",
+          "dwell": 60,
+          "note": "GOING UP - outdoor sky deck",
+          "reel": null,
+          "gmaps": "https://www.google.com/maps/search/?api=1&query=Edge%20NYC&query_place_id=ChIJ3aqq5Q1ZwokRb9hLO7Gyxgw",
+          "optionals": []
+        },
+        {
+          "id": "thu-5",
+          "name": "FRIENDS Experience",
+          "kind": "main",
+          "lat": 40.7394044,
+          "lng": -73.98516699999999,
+          "place_id": "ChIJlx_J861ZwokRnBboWMNuVno",
+          "mode": "walking",
+          "arrive": "12:44",
+          "depart": "13:59",
+          "leg": "walking 37 min, 2.50 km",
+          "dwell": 75,
+          "note": "Ticketed. Book ahead.",
+          "reel": null,
+          "gmaps": "https://www.google.com/maps/search/?api=1&query=FRIENDS%20Experience&query_place_id=ChIJlx_J861ZwokRnBboWMNuVno",
+          "optionals": [
+            {
+              "id": "thu-opt-7",
+              "name": "Gnocchi on 9th",
+              "kind": "optional",
+              "lat": 40.744705,
+              "lng": -73.9791827,
+              "place_id": "ChIJg1j1ziVZwokR52vd4-8o95E",
+              "note": "470 3rd Ave, ~1 km north. Detour here first if you want it (matches your 'only if nearby' note).",
+              "reel": "https://www.instagram.com/reel/DTTvMWRjpEf/",
+              "gmaps": "https://www.google.com/maps/search/?api=1&query=Gnocchi%20on%209th&query_place_id=ChIJg1j1ziVZwokR52vd4-8o95E"
+            }
+          ]
+        },
+        {
+          "id": "thu-6",
+          "name": "Flatiron Building",
+          "kind": "main",
+          "lat": 40.7410605,
+          "lng": -73.9896986,
+          "place_id": "ChIJZx8c96NZwokRJklw7SVhKt4",
+          "mode": "walking",
+          "arrive": "14:06",
+          "depart": "14:21",
+          "leg": "walking 7 min, 0.49 km",
+          "dwell": 15,
+          "note": "On the way down to the West Village",
+          "reel": null,
+          "gmaps": "https://www.google.com/maps/search/?api=1&query=Flatiron%20Building&query_place_id=ChIJZx8c96NZwokRJklw7SVhKt4",
+          "optionals": []
+        },
+        {
+          "id": "thu-7",
+          "name": "L'industrie Pizzeria",
+          "kind": "main",
+          "lat": 40.7332224,
+          "lng": -74.0049081,
+          "place_id": "ChIJ92OsaJVZwokRsC54kf-J-3g",
+          "mode": "walking",
+          "arrive": "14:47",
+          "depart": "15:37",
+          "leg": "walking 26 min, 1.86 km",
+          "dwell": 50,
+          "note": "Lunch in the West Village. Pizza + pistachio cantaloupe soft serve.",
+          "reel": "https://www.instagram.com/reel/DXnclYNDSRY/",
+          "gmaps": "https://www.google.com/maps/search/?api=1&query=L%27industrie%20Pizzeria&query_place_id=ChIJ92OsaJVZwokRsC54kf-J-3g",
+          "optionals": []
+        },
+        {
+          "id": "thu-8",
+          "name": "Friends Apartment Building",
+          "kind": "main",
+          "lat": 40.7323754,
+          "lng": -74.0052681,
+          "place_id": "ChIJvzozeABZwokRasR8djC6m6M",
+          "mode": "walking",
+          "arrive": "15:39",
+          "depart": "15:54",
+          "leg": "walking 2 min, 0.18 km",
+          "dwell": 15,
+          "note": "Not a must-do, but right here (Grove & Bedford). The exterior from the show.",
+          "reel": null,
+          "gmaps": "https://www.google.com/maps/search/?api=1&query=Friends%20Apartment%20Building&query_place_id=ChIJvzozeABZwokRasR8djC6m6M",
+          "optionals": [
+            {
+              "id": "thu-opt-8",
+              "name": "Slicehaus Pizzeria",
+              "kind": "optional",
+              "lat": 40.7300241,
+              "lng": -74.002841,
+              "place_id": "ChIJ3-TlFgFZwokRDOtx089xiXA",
+              "note": "30 Carmine St, right next door. Pizza by the slice before heading to Penn.",
+              "reel": "https://www.instagram.com/reel/DaLw50qSbrh/",
+              "gmaps": "https://www.google.com/maps/search/?api=1&query=Slicehaus%20Pizzeria&query_place_id=ChIJ3-TlFgFZwokRDOtx089xiXA"
+            }
+          ]
+        }
+      ],
+      "costs": [
+        [
+          "NJ Transit round trip",
+          "$26"
+        ],
+        [
+          "Subway (2 morning legs)",
+          "$6"
+        ],
+        [
+          "Roosevelt Island Tram",
+          "$3.25"
+        ],
+        [
+          "Edge NYC (going up)",
+          "$36–43"
+        ],
+        [
+          "FRIENDS Experience",
+          "$40–50"
+        ],
+        [
+          "Food (pizza + coffee)",
+          "$30–45"
+        ],
+        [
+          "Day total",
+          "~$145–175"
+        ]
+      ]
+    },
+    {
+      "id": "fri",
+      "label": "Friday Jul 24",
+      "sub": "DUMBO, Brooklyn Bridge, Statue of Liberty crown, Jersey City sunset. With your cousin.",
+      "end": "20:15",
+      "total_km": 13.2,
+      "stops": [
+        {
+          "id": "fri-0",
+          "name": "NY Penn Station",
+          "kind": "start",
+          "lat": 40.75005,
+          "lng": -73.99235999999999,
+          "place_id": "ChIJy62yFa5ZwokRun79NAZCVXk",
+          "mode": "start",
+          "arrive": "09:15",
+          "depart": "",
+          "leg": "",
+          "dwell": 0,
+          "note": "Arrive ~9:15am with cousin + kid. Subway to DUMBO (morning, once).",
+          "reel": null,
+          "gmaps": "https://www.google.com/maps/search/?api=1&query=NY%20Penn%20Station&query_place_id=ChIJy62yFa5ZwokRun79NAZCVXk",
+          "optionals": []
+        },
+        {
+          "id": "fri-1",
+          "name": "DUMBO Manhattan Bridge View",
+          "kind": "main",
+          "lat": 40.70331650000001,
+          "lng": -73.9895698,
+          "place_id": "ChIJd9SPZTFawokRh9NpOTE-G5k",
+          "mode": "transit",
+          "arrive": "09:42",
+          "depart": "10:07",
+          "leg": "transit 27 min, 8.29 km",
+          "dwell": 25,
+          "note": "The famous bridge-framed photo spot",
+          "reel": null,
+          "gmaps": "https://www.google.com/maps/search/?api=1&query=DUMBO%20Manhattan%20Bridge%20View&query_place_id=ChIJd9SPZTFawokRh9NpOTE-G5k",
+          "optionals": []
+        },
+        {
+          "id": "fri-2",
+          "name": "Pier 1 Playground",
+          "kind": "main",
+          "lat": 40.703104,
+          "lng": -73.99617959999999,
+          "place_id": "ChIJu0aHIjpawokRQKp9Lp5j-dY",
+          "mode": "walking",
+          "arrive": "10:15",
+          "depart": "10:40",
+          "leg": "walking 8 min, 0.61 km",
+          "dwell": 25,
+          "note": "Beautiful Manhattan skyline view",
+          "reel": null,
+          "gmaps": "https://www.google.com/maps/search/?api=1&query=Pier%201%20Playground&query_place_id=ChIJu0aHIjpawokRQKp9Lp5j-dY",
+          "optionals": []
+        },
+        {
+          "id": "fri-3",
+          "name": "Time Out Market",
+          "kind": "main",
+          "lat": 40.7034205,
+          "lng": -73.9921457,
+          "place_id": "ChIJ9aMCWaxbwokRZHJGmTBxFtQ",
+          "mode": "walking",
+          "arrive": "10:45",
+          "depart": "11:40",
+          "leg": "walking 5 min, 0.38 km",
+          "dwell": 55,
+          "note": "Early lunch. Free toilets. Eat before the Statue (long block ahead).",
+          "reel": null,
+          "gmaps": "https://www.google.com/maps/search/?api=1&query=Time%20Out%20Market&query_place_id=ChIJ9aMCWaxbwokRZHJGmTBxFtQ",
+          "optionals": []
+        },
+        {
+          "id": "fri-4",
+          "name": "Brooklyn Bridge (Manhattan side)",
+          "kind": "main",
+          "lat": 40.7060855,
+          "lng": -73.9968643,
+          "place_id": "ChIJK3vOQyNawokRXEa9errdJiU",
+          "mode": "walking",
+          "arrive": "12:01",
+          "depart": "12:11",
+          "leg": "walking 21 min, 1.39 km",
+          "dwell": 10,
+          "note": "Walk Brooklyn -> Manhattan (skyline ahead, not behind). ~30-40 min crossing.",
+          "reel": null,
+          "gmaps": "https://www.google.com/maps/search/?api=1&query=Brooklyn%20Bridge%20%28Manhattan%20side%29&query_place_id=ChIJK3vOQyNawokRXEa9errdJiU",
+          "optionals": []
+        },
+        {
+          "id": "fri-5",
+          "name": "Charging Bull",
+          "kind": "main",
+          "lat": 40.7055746,
+          "lng": -74.0134499,
+          "place_id": "ChIJURWoF5pYwokRIfXv4To528c",
+          "mode": "walking",
+          "arrive": "12:39",
+          "depart": "12:54",
+          "leg": "walking 28 min, 2.09 km",
+          "dwell": 15,
+          "note": "Photo",
+          "reel": null,
+          "gmaps": "https://www.google.com/maps/search/?api=1&query=Charging%20Bull&query_place_id=ChIJURWoF5pYwokRIfXv4To528c",
+          "optionals": []
+        },
+        {
+          "id": "fri-6",
+          "name": "The Battery / Statue ferry security",
+          "kind": "main",
+          "lat": 40.70293119999999,
+          "lng": -74.0153603,
+          "place_id": "ChIJraKL-BJawokREpxDmF5GcL4",
+          "mode": "walking",
+          "arrive": "13:00",
+          "depart": "14:00",
+          "leg": "walking 6 min, 0.48 km",
+          "dwell": 60,
+          "note": "Statue Cruises terminal. Security screening + ferry queue - budget ~1 hr in summer. Be here by ~1:30pm for a 2:30pm crown slot.",
+          "reel": null,
+          "gmaps": "https://www.google.com/maps/search/?api=1&query=The%20Battery%20/%20Statue%20ferry%20security&query_place_id=ChIJraKL-BJawokREpxDmF5GcL4",
+          "optionals": [
+            {
+              "id": "fri-opt-9",
+              "name": "Whitehall Terminal (Staten Island Ferry)",
+              "kind": "optional",
+              "lat": 40.7010853,
+              "lng": -74.0131012,
+              "place_id": "ChIJR_yfQhNawokRti4i3iRuWwY",
+              "note": "Right next to the Statue ferry terminal. FREE ferry, every 15 min, 25 min each way, great Statue-from-water + skyline view. Only if you have spare time before/after the crown.",
+              "reel": null,
+              "gmaps": "https://www.google.com/maps/search/?api=1&query=Whitehall%20Terminal%20%28Staten%20Island%20Ferry%29&query_place_id=ChIJR_yfQhNawokRti4i3iRuWwY"
+            }
+          ]
+        },
+        {
+          "id": "fri-7",
+          "name": "Statue of Liberty (CROWN, ~2:30pm)",
+          "kind": "main",
+          "lat": 40.6892494,
+          "lng": -74.04450039999999,
+          "place_id": "ChIJPTacEpBQwokRKwIlDXelxkA",
+          "mode": "ferry",
+          "arrive": "14:25",
+          "depart": "17:25",
+          "leg": "ferry ~25 min (fixed)",
+          "dwell": 180,
+          "note": "FIXED ANCHOR - crown reservation ~2:30pm. Ferry ~15 min, Liberty Island + crown climb + Ellis Island. ~3 hrs incl. ferries between islands.",
+          "reel": null,
+          "gmaps": "https://www.google.com/maps/search/?api=1&query=Statue%20of%20Liberty%20%28CROWN%2C%20~2%3A30pm%29&query_place_id=ChIJPTacEpBQwokRKwIlDXelxkA",
+          "optionals": []
+        },
+        {
+          "id": "fri-8",
+          "name": "9/11 Memorial & Oculus",
+          "kind": "main",
+          "lat": 40.7115776,
+          "lng": -74.0133362,
+          "place_id": "ChIJRcvoOxpawokR7R4dQMXMMPQ",
+          "mode": "ferry",
+          "arrive": "17:50",
+          "depart": "18:50",
+          "leg": "ferry ~25 min (fixed)",
+          "dwell": 60,
+          "note": "Ferry back to Battery, walk up. Memorial pools + Oculus + One WTC exterior.",
+          "reel": null,
+          "gmaps": "https://www.google.com/maps/search/?api=1&query=9/11%20Memorial%20%26%20Oculus&query_place_id=ChIJRcvoOxpawokR7R4dQMXMMPQ",
+          "optionals": []
+        },
+        {
+          "id": "fri-9",
+          "name": "J Owen Grundy Park (Jersey City)",
+          "kind": "main",
+          "lat": 40.71621529999999,
+          "lng": -74.0318602,
+          "place_id": "ChIJ9bOGvKlQwokRcTO4Rb937Bk",
+          "mode": "ferry",
+          "arrive": "19:15",
+          "depart": "20:15",
+          "leg": "ferry ~25 min (fixed)",
+          "dwell": 60,
+          "note": "NY Waterway ferry Battery -> Paulus Hook. Meet cousin's husband. Night skyline (sunset ~8:20pm).",
+          "reel": null,
+          "gmaps": "https://www.google.com/maps/search/?api=1&query=J%20Owen%20Grundy%20Park%20%28Jersey%20City%29&query_place_id=ChIJ9bOGvKlQwokRcTO4Rb937Bk",
+          "optionals": []
+        }
+      ],
+      "costs": [
+        [
+          "NJ Transit round trip",
+          "$26"
+        ],
+        [
+          "Subway to DUMBO",
+          "$3"
+        ],
+        [
+          "Statue of Liberty CROWN ticket",
+          "$24"
+        ],
+        [
+          "NY Waterway ferry to Jersey City",
+          "$8"
+        ],
+        [
+          "Food (Time Out Market lunch)",
+          "$25–40"
+        ],
+        [
+          "9/11 Memorial (plaza free; museum optional)",
+          "Free / $33"
+        ],
+        [
+          "Day total",
+          "~$90–135"
+        ]
+      ]
+    }
+  ]
+}
